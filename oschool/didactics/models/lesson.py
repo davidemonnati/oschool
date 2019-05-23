@@ -1,5 +1,6 @@
 from django.db import models
 from django.db.models import Q
+from .subject import Subject
 
 
 class Lesson(models.Model):
@@ -8,6 +9,11 @@ class Lesson(models.Model):
     end_time = models.TimeField()
     name = models.CharField(max_length=200)
     description = models.TextField()
+    subject = models.OneToOneField(
+        Subject,
+        on_delete=models.PROTECT,
+        related_name='subject_of'
+    )
 
     class Meta:
         verbose_name = "lesson"
