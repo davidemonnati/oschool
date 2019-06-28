@@ -4,8 +4,8 @@
 {% block title %}{{ user.username }}{% endblock %}
 
 {% block content %}
-  <h1>Aggiungi materia</h1>
-  <form class="form-horizontal" method="post" action="{% url 'didactics:subject-create' %}">
+  <h1>Aggiungi lezione</h1>
+  <form class="form-horizontal" method="post" action="{% url 'teachings:lesson-create' %}">
     {% csrf_token %}
     {{ form|crispy }}
     <div class="control-group">

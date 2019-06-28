@@ -3,10 +3,10 @@
 
 {% block content %}
 
-<form method="post" action="{% url 'didactics:subject-delete' subject.slug %}">
+<form method="post" action="{% url 'teachings:lesson-delete' lesson.slug %}">
     {% csrf_token %}
     {{ form|crispy }}
-    <p> Are you sure you want to delete the research? </p>
+    <p> Are you sure you want to delete the lesson? </p>
     <input type="submit" value="Confirm">
 </form>
 
