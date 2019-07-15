@@ -16,4 +16,4 @@ class Subject(models.Model):
         super(Subject, self).save(*args, **kwargs)
 
     def get_absolute_url(self):
-        return reverse_lazy('didactics:subject-detail', kwargs={'subject_slug': self.slug})
+        return reverse_lazy('teachings:subject-detail', kwargs={'subject_slug': self.slug})
