@@ -74,6 +74,7 @@ THIRD_PARTY_APPS = [
 LOCAL_APPS = [
     "oschool.users.apps.UsersAppConfig",
     "oschool.teachings.apps.TeachingsConfig",
+    "oschool.school_classes.apps.SchoolClassesConfig",
     # Your stuff: custom apps go here
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps

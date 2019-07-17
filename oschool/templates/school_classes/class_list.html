@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load static i18n %}
+{% block title %}School Classes{% endblock %}
+
+{% block content %}
+<div class="container">
+  <h2>School Classes</h2>
+
+  <div class="list-group">
+    {% for subject in subjects %}
+      <a href="{% url 'school_classes:classes-detail' school_classes.slug %}" class="list-group-item">
+        <h4 class="list-group-item-heading">{{ school_classes.section }}</h4>
+      </a>
+    {% endfor %}
+  </div>
+</div>
+{% endblock content %}

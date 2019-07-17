@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Class: {{ SchoolClass.slug }}{% endblock %}
+
+{% block content %}
+<div class="container">
+
+  <div class="row">
+    <div class="col-sm-12">
+      <h2>{{ SchoolClass.section }}</h2>
+    </div>
+  </div>
+{% endblock content %}
