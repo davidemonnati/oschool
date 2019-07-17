@@ -1,6 +1,8 @@
+from django.conf import settings
 from django.db import models
-from django.utils.text import slugify
 from django.urls import reverse_lazy
+from django.utils.text import slugify
+
 from .subject import Subject
 
 
@@ -11,6 +13,11 @@ class Lesson(models.Model):
     name = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(db_index=True, unique=True, max_length=200)
     description = models.TextField(null=True, blank=True)
+    teacher = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+        null=True,
+    )
     subject = models.ForeignKey(
         Subject,
         on_delete=models.PROTECT,
@@ -39,4 +46,3 @@ class Lesson(models.Model):
 
     def get_absolute_url(self):
         return reverse_lazy('teachings:lesson-detail', kwargs={'lesson_slug': self.slug})
-
