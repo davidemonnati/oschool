@@ -1,3 +1,6 @@
 from django.contrib import admin
+from .models import schoolclass, belong
 
-# Register your models here.
+
+admin.site.register(schoolclass)
+admin.site.register(belong)
