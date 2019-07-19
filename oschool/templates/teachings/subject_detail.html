@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Subject: {{ subject.name }}{% endblock %}
+
+{% block content %}
+<div class="container">
+
+  <div class="row">
+    <div class="col-sm-12">
+      <h2>{{ subject.name }}</h2>
+    </div>
+  </div>
+{% endblock content %}
